@@ -1,0 +1,20 @@
+{
+    "name": "drupal/drupalctl",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://static.drupal-packagist.org/v0.1.0"
+        }
+    ],
+    "require": {
+        "drupal/tangler": "dev-master@dev",
+        "winmillwill/settings_compile": "~2.0",
+        "drupal/drupal": "7.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "DrupalCtl\\": "src/"
+        }
+    },
+    "minimum-stability": "alpha"
+}

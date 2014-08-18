@@ -1,0 +1,21 @@
+drupalctl:
+  image: drupal_php
+  links:
+    - db
+  volumes:
+    - /home/core/share/drupal/drupalctl:/share
+  entrypoint: /share/bin/drupalctl
+  working_dir: /share
+  environment:
+    MYSQL_DATABASE: drupal
+    MYSQL_USER: drupal
+    MYSQL_PASSWORD: drupal
+db:
+  image: orchardup/mysql
+  detach: true
+  ports:
+    - "3306:3306"
+  environment:
+    MYSQL_DATABASE: drupal
+    MYSQL_USER: drupal
+    MYSQL_PASSWORD: drupal
