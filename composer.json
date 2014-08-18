@@ -16,5 +16,6 @@
             "DrupalCtl\\": "src/"
         }
     },
-    "minimum-stability": "alpha"
+    "minimum-stability": "alpha",
+    "bin": ["bin/drupalctl"]
 }

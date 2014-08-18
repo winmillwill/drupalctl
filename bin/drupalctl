@@ -5,9 +5,23 @@ use DrupalCtl\Command\Status;
 use DrupalCtl\Command\Install;
 use Symfony\Component\Console\Application;
 
-require __DIR__.'/../vendor/autoload.php';
 
-$application = new Application();
-$application->add(new Status);
-$application->add(new Install);
-$application->run();
+$require = function ($files) {
+  foreach ($files as $file) {
+    if (file_exists($file)) {
+      return require $file;
+    }
+  }
+};
+
+if ($require([
+__DIR__.'/../vendor/autoload.php',
+__DIR__.'/../../../autoload.php'
+])) {
+  $application = new Application();
+  $application->add(new Status);
+  $application->add(new Install);
+  $application->run();
+}
+
+throw new \Exception('install your dependencies with composer!');
