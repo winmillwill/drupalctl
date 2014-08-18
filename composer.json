@@ -7,7 +7,7 @@
         }
     ],
     "require": {
-        "drupal/tangler": "dev-master@dev",
+        "drupal/tangler": "~0.1.8",
         "winmillwill/settings_compile": "~2.0",
         "drupal/drupal": "7.*"
     },
